@@ -17,7 +17,7 @@ class ItemTableViewController: UITableViewController {
         super.viewDidLoad()
         tableView.register(UINib(nibName: "ItemTableViewCell", bundle: nil), forCellReuseIdentifier: "checkListCell")
         
-        itemList = realm.objects(TodoItem.self)
+        itemList = realm.objects(TodoItem.self).sorted(byKeyPath: "name")
         token = realm.observe{notification,realm in
             self.tableView.reloadData()
 
@@ -29,7 +29,9 @@ class ItemTableViewController: UITableViewController {
         return itemList?.count ?? 1
         
     }
-    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
+    }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "checkListCell", for: indexPath) as! ItemTableViewCell
         let item = itemList[indexPath.row]

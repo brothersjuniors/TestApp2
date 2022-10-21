@@ -24,21 +24,22 @@
             </objects>
             <point key="canvasLocation" x="-476" y="-132"/>
         </scene>
-        <!--Item Table View Controller-->
+        <!--CheckList-->
         <scene sceneID="SHl-9j-0lW">
             <objects>
                 <tableViewController id="jk8-tj-ppO" customClass="ItemTableViewController" customModule="TestApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="8lS-0G-2ta">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.22484788450000001" green="0.71036513990000005" blue="0.80987197160000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <connections>
                             <outlet property="dataSource" destination="jk8-tj-ppO" id="raz-JD-AHy"/>
                             <outlet property="delegate" destination="jk8-tj-ppO" id="raS-1O-pIr"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="liz-qZ-nyt">
+                    <navigationItem key="navigationItem" title="CheckList" id="liz-qZ-nyt">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="E6P-qm-XOz">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <segue destination="zHr-EH-8RC" kind="presentation" id="NVm-kH-eRB"/>
                             </connections>
@@ -57,9 +58,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="787"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="名前" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kx9-zz-Ijr">
-                                <rect key="frame" x="76" y="127" width="35" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="項目" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kx9-zz-Ijr">
+                                <rect key="frame" x="63" y="124" width="48" height="24"/>
+                                <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -68,10 +69,16 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iaJ-Bu-ANC">
-                                <rect key="frame" x="157.66666666666666" y="270" width="75" height="35"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iaJ-Bu-ANC">
+                                <rect key="frame" x="142" y="270" width="120" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="5np-oG-Cc2"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="mDm-ve-6nZ"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="tinted" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="追加">
+                                    <fontDescription key="titleFontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="25"/>
+                                </buttonConfiguration>
                                 <connections>
                                     <action selector="addButton:" destination="zHr-EH-8RC" eventType="touchUpInside" id="Hqk-z6-TVl"/>
                                 </connections>
@@ -81,9 +88,9 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="akV-Zd-8bv" firstAttribute="trailing" secondItem="kx9-zz-Ijr" secondAttribute="trailing" constant="279" id="F6n-cQ-i9k"/>
-                            <constraint firstItem="qmw-y2-f3h" firstAttribute="centerX" secondItem="iaJ-Bu-ANC" secondAttribute="centerX" id="SEl-BL-Rvn"/>
+                            <constraint firstItem="qmw-y2-f3h" firstAttribute="centerX" secondItem="iaJ-Bu-ANC" secondAttribute="centerX" constant="-7" id="SEl-BL-Rvn"/>
                             <constraint firstItem="qmw-y2-f3h" firstAttribute="leading" secondItem="akV-Zd-8bv" secondAttribute="leading" constant="46" id="Wb1-FW-a9K"/>
-                            <constraint firstItem="iaJ-Bu-ANC" firstAttribute="centerX" secondItem="rI2-NS-Fxr" secondAttribute="centerX" id="kWR-Ez-0Ks"/>
+                            <constraint firstItem="iaJ-Bu-ANC" firstAttribute="centerX" secondItem="rI2-NS-Fxr" secondAttribute="centerX" constant="7" id="kWR-Ez-0Ks"/>
                             <constraint firstItem="qmw-y2-f3h" firstAttribute="top" secondItem="kx9-zz-Ijr" secondAttribute="bottom" constant="28" id="nBR-dU-fXm"/>
                             <constraint firstItem="kx9-zz-Ijr" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="akV-Zd-8bv" secondAttribute="leading" id="nYG-k2-Vfe"/>
                             <constraint firstItem="iaJ-Bu-ANC" firstAttribute="top" secondItem="qmw-y2-f3h" secondAttribute="bottom" constant="60" id="rO6-Q1-BFQ"/>
@@ -97,7 +104,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4s1-NW-Oyw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="942" y="-132"/>
+            <point key="canvasLocation" x="941.53846153846155" y="-132.22748815165878"/>
         </scene>
     </scenes>
     <resources>
