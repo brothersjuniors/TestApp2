@@ -21,14 +21,6 @@ class InfoHelper {
 
     }
 
-    func saves(done: Bool){
-        let realm = try! Realm()
 
-        item.done = false
-        try! realm.write{
-            realm.add(item)
-        }
-
-    }
 
 }

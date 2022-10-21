@@ -25,10 +25,22 @@ class ItemTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return itemList?.count ?? 1
-        
+        return itemList.count
     }
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            try! realm.write {
+
+                realm.delete(itemList[indexPath.row])
+                tableView.deleteRows(at: [indexPath], with: .fade)
+                tableView.reloadData()
+            }
+        
+        }
+
+    }
+
+
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80
     }
@@ -53,9 +65,11 @@ class ItemTableViewController: UITableViewController {
 
                     item.done = !item.done
 
-                    }
                 }
             }
-            tableView.reloadData()
-        }}
+        }
+        tableView.reloadData()
+    }
 
+
+}
