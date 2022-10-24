@@ -6,13 +6,9 @@
 //
 
 import UIKit
-import RealmSwift
+
 class ItemTableViewCell: UITableViewCell {
-    let realm = try! Realm()
-    let item = TodoItem()
-
-
-    @IBOutlet weak var checkImageView: UIImageView!
+  @IBOutlet weak var checkImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()

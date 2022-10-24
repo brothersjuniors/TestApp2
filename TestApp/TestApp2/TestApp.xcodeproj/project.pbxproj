@@ -103,8 +103,8 @@
 		AD2456B128F3467200E66A85 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				AD2456AA28F33EE000E66A85 /* ItemTableViewCell.xib */,
 				AD2456A928F33EE000E66A85 /* ItemTableViewCell.swift */,
+				AD2456AA28F33EE000E66A85 /* ItemTableViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
